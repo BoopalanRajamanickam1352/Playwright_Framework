@@ -1,5 +1,5 @@
 export const finalPageLocators = {
-    pageInfo: ".title",
-    successMsg: ".complete-header",
+    pageInfo: ".complete-header",
+    successMsg: ".complete-text",
     backHomeBtn: "#back-to-products"
 }
