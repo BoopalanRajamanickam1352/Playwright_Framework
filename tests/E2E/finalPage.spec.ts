@@ -31,7 +31,6 @@ test.describe("final page validation", () => {
         await productPage.cartButtonClick()
         await cartPage.getFirstProductDetails()
         await cartPage.checkoutCartPage()
-        console.log("start")
         await checkoutPage.fillCheckoutDetails(checkoutData.firstName, checkoutData.lastName, checkoutData.postalCode)
         await checkoutPage.continueButton()
         await checkoutOverviewPage.clickOnFinish()
@@ -52,6 +51,7 @@ test.describe("final page validation", () => {
 
     test("validate back home button 3", async ({ page }) => {
         await finalPage.clickOnBackHomeButton()
+        await page.waitForTimeout(2000)
         expect(page).toHaveURL("https://www.saucedemo.com/inventory.html")
     })
 
