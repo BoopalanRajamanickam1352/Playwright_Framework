@@ -36,7 +36,7 @@ test.describe("final page validation", () => {
         await checkoutOverviewPage.clickOnFinish()
     })
 
-    test("validate checkout overview page UI and URL 1", async ({ page }) => {
+    test(`@smoke validate checkout overview page UI and URL 1`, async ({ page }) => {
         await expect(page).toHaveURL("https://www.saucedemo.com/checkout-complete.html")
         const elements = await finalPage.getFinalPageElements()
         expect(elements.backHomeButton).toBeVisible()

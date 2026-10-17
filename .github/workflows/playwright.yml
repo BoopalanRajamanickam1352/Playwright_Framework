@@ -27,5 +27,12 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test tests/E2E/finalPage.spec.ts
+        run: npx playwright test tests/E2E/finalPage.spec.ts 
+
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
 
